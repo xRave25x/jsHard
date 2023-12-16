@@ -1,12 +1,11 @@
+let num = 266219;
+let numDegree;
 
-let num = 266219 ;
-let numX;
-const numXnum = (num) => num.toString().split('').reduce((res, item) => item * res, 1)
-console.log(numXnum(num))
+const numMultiple = (num) => num.toString().split('').reduce((res, item) => item * res, 1)
+console.log(numMultiple(num));
 
+const numMult = numMultiple(num);
 
-
-numX = num ** 3;
-console.log(numX);
-
-console.log(String(numX).slice(0,2));
+numDegree = numMult ** 3;
+console.log(numDegree);
+console.log(String(numDegree).slice(0,2));
