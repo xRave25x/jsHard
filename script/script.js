@@ -1,7 +1,7 @@
 let num = 266219;
 let numDegree;
 
-const numMultiple = (num) => num.toString().split('').reduce((res, item) => item * res, 1)
+const numMultiple = (num) => num.toString().split('').reduce((res, item) => item * res, 1);
 console.log(numMultiple(num));
 
 const numMult = numMultiple(num);
