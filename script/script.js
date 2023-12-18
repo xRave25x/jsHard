@@ -1,11 +1,28 @@
-let num = 266219;
-let numDegree;
+const lang = 'en';
+const masRu = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+const masEn = ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'];
 
-const numMultiple = (num) => num.toString().split('').reduce((res, item) => item * res, 1);
-console.log(numMultiple(num));
+if (lang === 'ru'){
+    console.log(masRu);
+} else if (lang === 'en'){
+    console.log(masEn);
+};
 
-const numMult = numMultiple(num);
+switch (lang) {
+    case 'ru':
+        console.log(masRu);
+        break;
+    case 'en':
+        console.log(masEn);
+        break;
+};
 
-numDegree = numMult ** 3;
-console.log(numDegree);
-console.log(String(numDegree).slice(0,2));
+const mas = {
+	'ru':['пн', 'вт', 'ср','чт', 'пт', 'сб', 'вс'],
+	'en':['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'],
+};
+console.log(mas[lang]);
+
+let namePerson = 'Артем';
+
+namePerson === 'Артем' ? 'Директор' : 'Александр' ? 'Преподователь' : 'Студент';
