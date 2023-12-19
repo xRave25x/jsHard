@@ -4,7 +4,7 @@ const masEn = ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'];
 
 if (lang === 'ru'){
     console.log(masRu);
-} else if (lang === 'en'){
+}else{
     console.log(masEn);
 };
 
@@ -15,6 +15,8 @@ switch (lang) {
     case 'en':
         console.log(masEn);
         break;
+    default: 
+        console.log('Неверные данные');
 };
 
 const mas = {
@@ -25,4 +27,5 @@ console.log(mas[lang]);
 
 let namePerson = 'Артем';
 
-namePerson === 'Артем' ? 'Директор' : 'Александр' ? 'Преподователь' : 'Студент';
+namePerson === 'Артем' ? console.log('Директор') : 
+namePerson === 'Александр' ? console.log('Преподователь') : console.log('Студент');
