@@ -1,15 +1,16 @@
-const nameM = 111;
+const arr = [24443, 45678, 45234, 34578, 24567, 34597, 23417]
+
+let filteredArr = arr.filter(i => String(i)[0] == 2 || String(i)[0] == 4);
+
+console.log(filteredArr);
 
 
-function test(str) {
-    if (typeof str !== 'string') {
-    alert('Вы ввели не верное значение');
-    return;
-    }
-
-    str = str.trim(); 
-    return str.length > 30 ? str.slice(0, 30) + '...' : str;
+const Natural = (x) => {
+    for (let i = 2; i * i <= x; i == 2 ? i++ : i += 2)
+        if (x % i == 0) return false;
+    return x > 1;
 }
 
-test(nameM);
+const res = [...Array(100)].reduce((a, _, i) => a.concat(Natural(i) ? `Делители числа ${i}: 1 и ${i}` : []), []).join('\n');
 
+console.log(res);
