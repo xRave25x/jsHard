@@ -1,28 +1,46 @@
-const arr = ['24443', '45678', '45234', '34578', '24567', '34597', '23417']
-let filteredArr = arr.filter(i => (i)[0] == 2 || (i)[0] == 4); // через filter
+const date = new Date();
 
-console.log(filteredArr);
+const dateBlock = document.getElementById('current_date_time_block');
+const secondDateBlock = document.getElementById('second_date_block');
+const currentDateBlock = document.getElementById('current_date_time_block2');
 
-arr.forEach((item) => {
-    if (item.startsWith('2') || item.startsWith('4')) { // через цикл forEach с применением .startWith()
-        console.log(item);
-    }
-});
+const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    weekday: 'long',
+    timezone: 'UTC',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric'
+};
 
+const dateUp = date.toLocaleString("ru", options);
 
-for(let i = 2; i <= 100; i++){
-    let primeNum = true;
+secondDateBlock.innerHTML = dateUp;
 
-    for(let j = 2; j < i; j++) {
-
-        if(i % j == 0) {
-            primeNum = false;
-            break;
+    function zero_first_format(value)
+    {
+        if (value < 10)
+        {
+            value='0'+value;
         }
+        return value;
     }
+    function date_time()
+    {
+        const current_datetime = new Date();
+        const day = zero_first_format(current_datetime.getDate());
+        const month = zero_first_format(current_datetime.getMonth()+1);
+        const year = current_datetime.getFullYear();
+        const hours = zero_first_format(current_datetime.getHours());
+        const minutes = zero_first_format(current_datetime.getMinutes());
+        const seconds = zero_first_format(current_datetime.getSeconds());
 
-    if (primeNum) {
-        console.log(i, 'Делители этого числа: 1 и ' + i);
+        return day+"."+month+"."+year+" "+hours+":"+minutes+":"+seconds;
     }
-}
+    dateBlock.innerHTML = date_time();
 
+    setInterval(()=> {
+        currentDateBlock.innerHTML = date_time();
+    }, 1000);
