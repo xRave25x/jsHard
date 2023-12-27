@@ -1,4 +1,4 @@
-weekDays = document.querySelector('.days-of-week');
+const weekDays = document.querySelector('.days-of-week');
 
 const week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const todayDay = new Date();
@@ -7,7 +7,6 @@ const allDays = () => {
     week.forEach((item, i) => {
         let newdiv = document.createElement('div');
         if (i === +todayDay.getDay()-1) { 
-            console.log(todayDay.getDay());
             newdiv.classList.add('today'); 
             newdiv.textContent = week[i]; 
         }
