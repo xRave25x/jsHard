@@ -5,19 +5,19 @@ const todayDay = new Date();
 
 const allDays = () => {
     week.forEach((item, i) => {
-        let newdiv = document.createElement('div'); // Для каждого элемента week создаём div
-        if (i === +todayDay.getDay()-1) { // Если текущий день недели то от номера текущей даты отнимаем единицу, так как массив у нас начинается с нуля
+        let newdiv = document.createElement('div');
+        if (i === +todayDay.getDay()-1) { 
             console.log(todayDay.getDay());
-            newdiv.classList.add('today'); // Добавляем класс (делаем жирным)
-            newdiv.textContent = week[i]; // Вставляем текст
+            newdiv.classList.add('today'); 
+            newdiv.textContent = week[i]; 
         }
-        if (item == 'Saturday' || item == 'Sunday') { // Если выходные то
-            newdiv.classList.add('italic'); // Делаем дополнительно курсивом (Даже если уже жирным выделено)
-            newdiv.textContent = week[i]; // Вставляем текст
+        if (item == 'Saturday' || item == 'Sunday') { 
+            newdiv.classList.add('italic'); 
+            newdiv.textContent = week[i];
         } else {
-            newdiv.textContent = week[i]; // Если не текущий день и не выходные, то просто вставляем текст без стилей
+            newdiv.textContent = week[i];
         }
-        weekDays.appendChild(newdiv); // Добавляем новый див в div @day
+        weekDays.appendChild(newdiv); 
 
     });
 }
